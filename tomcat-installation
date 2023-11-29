@@ -23,6 +23,9 @@ sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat # soft link to start
 sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
 starttomcat
 
+sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+sudo service sshd restart
+
 #2. Start of tomcat configuration 
 
 #Tomcat server configuration:
